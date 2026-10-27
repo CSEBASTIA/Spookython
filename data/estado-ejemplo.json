@@ -1,0 +1,2052 @@
+{
+ "ronda": 3,
+ "nombreRonda": "Apocalipsis",
+ "semilla": 303,
+ "turno": 25,
+ "turnosTotales": 150,
+ "enCurso": true,
+ "zombies": [
+  {
+   "id": "Z-000",
+   "tipo": "horda",
+   "nodo": "N-0095",
+   "recorrido": [
+    "N-0095"
+   ]
+  },
+  {
+   "id": "Z-001",
+   "tipo": "horda",
+   "nodo": "N-0011",
+   "recorrido": [
+    "N-0011"
+   ]
+  },
+  {
+   "id": "Z-002",
+   "tipo": "horda",
+   "nodo": "N-0060",
+   "recorrido": [
+    "N-0060"
+   ]
+  },
+  {
+   "id": "Z-003",
+   "tipo": "horda",
+   "nodo": "N-0052",
+   "recorrido": [
+    "N-0052"
+   ]
+  },
+  {
+   "id": "Z-004",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-005",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-006",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-007",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-008",
+   "tipo": "corredor",
+   "nodo": "N-0121",
+   "recorrido": [
+    "N-0108",
+    "N-0111",
+    "N-0121"
+   ]
+  },
+  {
+   "id": "Z-009",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-010",
+   "tipo": "corredor",
+   "nodo": "N-0098",
+   "recorrido": [
+    "N-0107",
+    "N-0099",
+    "N-0098"
+   ]
+  },
+  {
+   "id": "Z-011",
+   "tipo": "corredor",
+   "nodo": "N-0107",
+   "recorrido": [
+    "N-0104",
+    "N-0108",
+    "N-0107"
+   ]
+  },
+  {
+   "id": "Z-012",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-013",
+   "tipo": "corredor",
+   "nodo": "N-0106",
+   "recorrido": [
+    "N-0108",
+    "N-0103",
+    "N-0106"
+   ]
+  },
+  {
+   "id": "Z-014",
+   "tipo": "corredor",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0046",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-015",
+   "tipo": "corredor",
+   "nodo": "N-0102",
+   "recorrido": [
+    "N-0104",
+    "N-0101",
+    "N-0102"
+   ]
+  },
+  {
+   "id": "Z-016",
+   "tipo": "caminante",
+   "nodo": "N-0073",
+   "recorrido": [
+    "N-0087",
+    "N-0073"
+   ]
+  },
+  {
+   "id": "Z-017",
+   "tipo": "caminante",
+   "nodo": "N-0031",
+   "recorrido": [
+    "N-0031"
+   ]
+  },
+  {
+   "id": "Z-018",
+   "tipo": "caminante",
+   "nodo": "N-0060",
+   "recorrido": [
+    "N-0058",
+    "N-0060"
+   ]
+  },
+  {
+   "id": "Z-019",
+   "tipo": "caminante",
+   "nodo": "N-0095",
+   "recorrido": [
+    "N-0097",
+    "N-0095"
+   ]
+  },
+  {
+   "id": "Z-020",
+   "tipo": "caminante",
+   "nodo": "N-0067",
+   "recorrido": [
+    "N-0067"
+   ]
+  },
+  {
+   "id": "Z-021",
+   "tipo": "caminante",
+   "nodo": "N-0092",
+   "recorrido": [
+    "N-0092"
+   ]
+  },
+  {
+   "id": "Z-022",
+   "tipo": "caminante",
+   "nodo": "N-0053",
+   "recorrido": [
+    "N-0051",
+    "N-0053"
+   ]
+  },
+  {
+   "id": "Z-023",
+   "tipo": "caminante",
+   "nodo": "N-0008",
+   "recorrido": [
+    "N-0008"
+   ]
+  },
+  {
+   "id": "Z-024",
+   "tipo": "caminante",
+   "nodo": "N-0092",
+   "recorrido": [
+    "N-0105",
+    "N-0092"
+   ]
+  },
+  {
+   "id": "Z-025",
+   "tipo": "caminante",
+   "nodo": "N-0022",
+   "recorrido": [
+    "N-0022"
+   ]
+  },
+  {
+   "id": "Z-026",
+   "tipo": "caminante",
+   "nodo": "N-0217",
+   "recorrido": [
+    "N-0217"
+   ]
+  },
+  {
+   "id": "Z-027",
+   "tipo": "caminante",
+   "nodo": "N-0072",
+   "recorrido": [
+    "N-0059",
+    "N-0072"
+   ]
+  },
+  {
+   "id": "Z-028",
+   "tipo": "caminante",
+   "nodo": "N-0009",
+   "recorrido": [
+    "N-0008",
+    "N-0009"
+   ]
+  },
+  {
+   "id": "Z-029",
+   "tipo": "caminante",
+   "nodo": "N-0036",
+   "recorrido": [
+    "N-0036"
+   ]
+  },
+  {
+   "id": "Z-030",
+   "tipo": "caminante",
+   "nodo": "N-0040",
+   "recorrido": [
+    "N-0040"
+   ]
+  },
+  {
+   "id": "Z-031",
+   "tipo": "caminante",
+   "nodo": "N-0096",
+   "recorrido": [
+    "N-0102",
+    "N-0096"
+   ]
+  },
+  {
+   "id": "Z-032",
+   "tipo": "caminante",
+   "nodo": "N-0047",
+   "recorrido": [
+    "N-0047"
+   ]
+  },
+  {
+   "id": "Z-033",
+   "tipo": "caminante",
+   "nodo": "N-0059",
+   "recorrido": [
+    "N-0062",
+    "N-0059"
+   ]
+  },
+  {
+   "id": "Z-034",
+   "tipo": "caminante",
+   "nodo": "N-0090",
+   "recorrido": [
+    "N-0072",
+    "N-0090"
+   ]
+  },
+  {
+   "id": "Z-035",
+   "tipo": "caminante",
+   "nodo": "N-0056",
+   "recorrido": [
+    "N-0061",
+    "N-0056"
+   ]
+  },
+  {
+   "id": "Z-036",
+   "tipo": "caminante",
+   "nodo": "N-0052",
+   "recorrido": [
+    "N-0051",
+    "N-0052"
+   ]
+  },
+  {
+   "id": "Z-037",
+   "tipo": "caminante",
+   "nodo": "N-0025",
+   "recorrido": [
+    "N-0025"
+   ]
+  },
+  {
+   "id": "Z-038",
+   "tipo": "caminante",
+   "nodo": "N-0081",
+   "recorrido": [
+    "N-0071",
+    "N-0081"
+   ]
+  },
+  {
+   "id": "Z-039",
+   "tipo": "caminante",
+   "nodo": "N-0098",
+   "recorrido": [
+    "N-0098"
+   ]
+  },
+  {
+   "id": "Z-040",
+   "tipo": "caminante",
+   "nodo": "N-0024",
+   "recorrido": [
+    "N-0024"
+   ]
+  },
+  {
+   "id": "Z-041",
+   "tipo": "caminante",
+   "nodo": "N-0090",
+   "recorrido": [
+    "N-0094",
+    "N-0090"
+   ]
+  },
+  {
+   "id": "Z-042",
+   "tipo": "caminante",
+   "nodo": "N-0102",
+   "recorrido": [
+    "N-0101",
+    "N-0102"
+   ]
+  },
+  {
+   "id": "Z-043",
+   "tipo": "caminante",
+   "nodo": "N-0086",
+   "recorrido": [
+    "N-0086"
+   ]
+  },
+  {
+   "id": "Z-044",
+   "tipo": "caminante",
+   "nodo": "N-0094",
+   "recorrido": [
+    "N-0094"
+   ]
+  },
+  {
+   "id": "Z-045",
+   "tipo": "caminante",
+   "nodo": "N-0085",
+   "recorrido": [
+    "N-0085"
+   ]
+  },
+  {
+   "id": "Z-046",
+   "tipo": "caminante",
+   "nodo": "N-0022",
+   "recorrido": [
+    "N-0022"
+   ]
+  },
+  {
+   "id": "Z-047",
+   "tipo": "caminante",
+   "nodo": "N-0084",
+   "recorrido": [
+    "N-0084"
+   ]
+  },
+  {
+   "id": "Z-049",
+   "tipo": "caminante",
+   "nodo": "N-0037",
+   "recorrido": [
+    "N-0037"
+   ]
+  },
+  {
+   "id": "Z-052",
+   "tipo": "caminante",
+   "nodo": "N-0107",
+   "recorrido": [
+    "N-0107"
+   ]
+  },
+  {
+   "id": "Z-055",
+   "tipo": "caminante",
+   "nodo": "N-0027",
+   "recorrido": [
+    "N-0025",
+    "N-0027"
+   ]
+  },
+  {
+   "id": "Z-056",
+   "tipo": "caminante",
+   "nodo": "N-0045",
+   "recorrido": [
+    "N-0045"
+   ]
+  },
+  {
+   "id": "Z-057",
+   "tipo": "caminante",
+   "nodo": "N-0091",
+   "recorrido": [
+    "N-0088",
+    "N-0091"
+   ]
+  },
+  {
+   "id": "Z-058",
+   "tipo": "caminante",
+   "nodo": "N-0037",
+   "recorrido": [
+    "N-0040",
+    "N-0037"
+   ]
+  },
+  {
+   "id": "Z-059",
+   "tipo": "caminante",
+   "nodo": "N-0021",
+   "recorrido": [
+    "N-0023",
+    "N-0021"
+   ]
+  }
+ ],
+ "aristasBloqueadas": [
+  "E-0224",
+  "E-0227"
+ ],
+ "sobrevivientes": [
+  {
+   "id": "S-0000",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0001",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0002",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0003",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0004",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0005",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0006",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0007",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0008",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0009",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0010",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0011",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0012",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0013",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0014",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0015",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0016",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0017",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0018",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0019",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0020",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0021",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0022",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0023",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0024",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0025",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0026",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0027",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0028",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0029",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0030",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0031",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0032",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0033",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0034",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0035",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0036",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0037",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0038",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0039",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0040",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0041",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0042",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0043",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0044",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0045",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0046",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0047",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0048",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0049",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0050",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0051",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0052",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0053",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0054",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0055",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0056",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0057",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0058",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0059",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0060",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0061",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0062",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0063",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0064",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0065",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0066",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0067",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0068",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0069",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0070",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0071",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0072",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0073",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0074",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0075",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0076",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0077",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0078",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0079",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0080",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0081",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0082",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0083",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0084",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0085",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0086",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0087",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0088",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0089",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0090",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0091",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0092",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0093",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0094",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0095",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0096",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0097",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0098",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0099",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0100",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0101",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0102",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0103",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0104",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0105",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0106",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0107",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0108",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0109",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0110",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0111",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0112",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0113",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0114",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0115",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0116",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0117",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0118",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0119",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0120",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0121",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0122",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0123",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0124",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0125",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0126",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0127",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0128",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0129",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0130",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0131",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0132",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0133",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0134",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0135",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0136",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0137",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0138",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0139",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0140",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0141",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0142",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0143",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0144",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0145",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0146",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0147",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0148",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0149",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0150",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0151",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0152",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0153",
+   "nodo": "N-0105",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0154",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0155",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0156",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0157",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0158",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0159",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0160",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0161",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0162",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0163",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0164",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0165",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0166",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0167",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0168",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0169",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0170",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0171",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0172",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0173",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0174",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0175",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-4"
+  },
+  {
+   "id": "S-0176",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0177",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0178",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0179",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0180",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0181",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0182",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0183",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0184",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0185",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0186",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0187",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0188",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0189",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0190",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0191",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0192",
+   "nodo": "N-0023",
+   "estado": "mordido",
+   "refugioAnterior": "R-3"
+  },
+  {
+   "id": "S-0193",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0194",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0195",
+   "nodo": "N-0121",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0196",
+   "nodo": "N-0069",
+   "estado": "huyendo",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0197",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  },
+  {
+   "id": "S-0198",
+   "nodo": "N-0258",
+   "estado": "a_salvo",
+   "refugioAnterior": "R-2"
+  },
+  {
+   "id": "S-0199",
+   "nodo": "N-0106",
+   "estado": "mordido",
+   "refugioAnterior": "R-1"
+  }
+ ],
+ "refugios": [
+  {
+   "id": "R-1",
+   "nombre": "Mall del Pacífico",
+   "nodo": "N-0064",
+   "ocupados": 0,
+   "capacidad": 80
+  },
+  {
+   "id": "R-2",
+   "nombre": "Estadio Municipal Jocay",
+   "nodo": "N-0258",
+   "ocupados": 70,
+   "capacidad": 70
+  },
+  {
+   "id": "R-3",
+   "nombre": "Hospital Rodríguez Zambrano",
+   "nodo": "N-0029",
+   "ocupados": 0,
+   "capacidad": 60
+  },
+  {
+   "id": "R-4",
+   "nombre": "Megaparque Centenario",
+   "nodo": "N-0121",
+   "ocupados": 30,
+   "capacidad": 30
+  }
+ ],
+ "rutas": {
+  "S-0000": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0004": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0008": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0016": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0020": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0024": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0028": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0032": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0036": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0040": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0048": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0060": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0064": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0080": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0084": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0088": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0092": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0096": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0104": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0108": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0116": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0128": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0132": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0140": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0144": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0168": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0176": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0180": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0184": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0188": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ],
+  "S-0196": [
+   "N-0056",
+   "N-0069",
+   "N-0084",
+   "N-0061",
+   "N-0064"
+  ]
+ },
+ "metricas": {
+  "pedidos": 2349,
+  "errores": 0,
+  "fueraDeTiempo": 0,
+  "p50": 18.8,
+  "p95": 129.4,
+  "p99": 131.2
+ },
+ "resultado": {
+  "ronda": 3,
+  "semilla": 303,
+  "turnos": 25,
+  "total": 200,
+  "salvados": 100,
+  "mordidos": 69,
+  "sinLlegar": 31,
+  "eficiencia": 0.910141414141414,
+  "latencia": {
+   "pedidos": 2349,
+   "errores": 0,
+   "fueraDeTiempo": 0,
+   "p50": 18.8,
+   "p95": 129.4,
+   "p99": 131.2
+  }
+ },
+ "eventos": [
+  {
+   "turno": 5,
+   "texto": "19 mordidos: S-0012, S-0044, S-0052, S-0056, S-0068…"
+  },
+  {
+   "turno": 5,
+   "texto": "11 llegaron a un refugio"
+  },
+  {
+   "turno": 6,
+   "texto": "25 llegaron a un refugio"
+  },
+  {
+   "turno": 7,
+   "texto": "Megaparque Centenario está lleno: quien llega no puede entrar"
+  },
+  {
+   "turno": 7,
+   "texto": "8 llegaron a un refugio"
+  },
+  {
+   "turno": 8,
+   "texto": "Se bloqueó Calle J4 (E-0227)"
+  },
+  {
+   "turno": 8,
+   "texto": "3 llegaron a un refugio"
+  },
+  {
+   "turno": 9,
+   "texto": "3 llegaron a un refugio"
+  },
+  {
+   "turno": 10,
+   "texto": "2 llegaron a un refugio"
+  },
+  {
+   "turno": 11,
+   "texto": "4 llegaron a un refugio"
+  },
+  {
+   "turno": 12,
+   "texto": "2 llegaron a un refugio"
+  },
+  {
+   "turno": 14,
+   "texto": "1 llegó a un refugio"
+  },
+  {
+   "turno": 15,
+   "texto": "3 llegaron a un refugio"
+  },
+  {
+   "turno": 16,
+   "texto": "Se bloqueó Avenida 24 de Mayo (E-0224)"
+  },
+  {
+   "turno": 17,
+   "texto": "44 mordidos: S-0007, S-0011, S-0017, S-0019, S-0027…"
+  },
+  {
+   "turno": 18,
+   "texto": "Z-057 despertó en N-0062"
+  },
+  {
+   "turno": 19,
+   "texto": "Z-047 despertó en N-0047"
+  },
+  {
+   "turno": 20,
+   "texto": "Z-058 despertó en N-0043"
+  },
+  {
+   "turno": 21,
+   "texto": "Z-056 despertó en N-0042"
+  },
+  {
+   "turno": 23,
+   "texto": "6 mordidos: S-0029, S-0077, S-0097, S-0105, S-0145…"
+  }
+ ],
+ "historial": [],
+ "puntaje": null,
+ "actualizadoEn": "2026-10-27T09:10:49.093Z"
+}

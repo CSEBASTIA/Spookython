@@ -301,8 +301,8 @@ El motor arma un **plan por turno** una sola vez por tarea y lo reutiliza para l
 | Ronda | Sobrevivientes | Zombies (propuesta inicial; B la ajusta) | Eventos |
 |---|---|---|---|
 | R1 · Anochecer | 20 | 15 caminantes | — |
-| R2 · Medianoche | 80 | 20 caminantes, 8 corredores, 3 hordas | Un puente colapsa en el turno 60 |
-| R3 · Apocalipsis | 200 | 30 caminantes, 12 corredores, 4 hordas, 15 dormidos | Dos calles se bloquean (turnos 50 y 100, o con un clic del presentador) |
+| R2 · Medianoche | 80 | 20 caminantes, 8 corredores, 3 hordas | Un puente colapsa en el turno 10 |
+| R3 · Apocalipsis | 200 | 30 caminantes, 12 corredores, 4 hordas, 15 dormidos | Dos calles se bloquean (turnos 8 y 16, o con un clic del presentador) |
 
 - Los sobrevivientes aparecen repartidos en Tarqui, Los Esteros, Barbasquillo y Jocay.
 - Ningún zombie aparece a menos de 3 nodos de un sobreviviente ni en un refugio.
@@ -545,7 +545,7 @@ Se cierran juntos antes de que cada uno empiece con su lista.
 1. **Nombres** de A, B y C, y el **correo** que recibe las alertas del Budget.
 2. **Velocidades** por tipo de calle y valor inicial de **λ**. Recomendado: la tabla de la sección 4 y λ = 0,3.
 3. **Horda:** terminar el turno en un vecino de una horda cuenta como **mordida**, que es la lectura más estricta de «bloquea su nodo y todos los vecinos».
-4. **Los 4 refugios:** lugares reconocibles de Manta con capacidades **80, 70, 60 y 30** (suman 240 para 200 sobrevivientes, y el pequeño hace que el reparto importe).
+4. **Los 4 refugios:** Mall del Pacífico (80), Estadio Municipal Jocay (70), Hospital Rodríguez Zambrano (60) y Megaparque Centenario (30). Suman 240 para 200 sobrevivientes, y el pequeño hace que el reparto importe. Ya están en `data/manta.json`; si el equipo prefiere otros lugares, se cambian en `scripts/construir-grafo.ts`.
 5. **Cantidad de zombies por ronda:** se parte de la tabla de la sección 6 y B la ajusta con el banco para que la ronda sea difícil pero justa.
 6. **Flota de rescate (PRO): fuera** por el plazo. El PRO se limita a predicción de corredores y reparto por capacidad, que son baratos dentro del motor.
 7. **Preguntar a la organización** si se puede desplegar algo después de las 10:00 del miércoles. Si no se puede, el código del viernes es el del tag `v1.0`.

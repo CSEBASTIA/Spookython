@@ -6,7 +6,7 @@ import {
   indicesDeAristas,
   type Grafo,
 } from '../../compartido/src/grafo.js';
-import { esMordida, movimientosDeCruce, nodosMortales } from '../../compartido/src/reglas.js';
+import { esMordida, movimientosDeCruce, nodosMortales, persecucionDeCorredor } from '../../compartido/src/reglas.js';
 import type { EstadoTurno, RespuestaPaso, Sobreviviente, Zombie } from '../../compartido/src/tipos.js';
 
 /** Pesos del plan, en «turnos equivalentes». El banco de pruebas decide los valores finales. */
@@ -179,7 +179,8 @@ function calcularPeligro(
       }
     }
     if (z.tipo === 'corredor') {
-      for (const v of persecucionPrevista(grafo, origen, presas, bloqueadas)) peligro[v]! += p.p3;
+      // PRO: los 2 nodos que recorrerá si persigue a alguien, con la misma regla del simulador
+      for (const v of persecucionDeCorredor(grafo, origen, presas, bloqueadas)) peligro[v]! += p.p3;
     }
   }
 
@@ -187,38 +188,6 @@ function calcularPeligro(
     if (grafo.refugioEn[v] === -1 && gradoAbierto(grafo, v, bloqueadas) <= 1) peligro[v]! += p.p4;
   }
   return peligro;
-}
-
-/**
- * PRO: si el corredor tiene un sobreviviente a 3 nodos o menos, lo va a perseguir.
- * Se repite lo que hará el simulador (BFS hacia el más cercano) y se devuelven
- * los 2 nodos que recorrerá en el próximo turno.
- */
-function persecucionPrevista(grafo: Grafo, origen: number, presas: Uint8Array, bloqueadas: ReadonlySet<number>): number[] {
-  if (presas[origen] === 1) return [];
-  const padre = new Int32Array(grafo.ids.length).fill(-2);
-  const nivel = new Int32Array(grafo.ids.length);
-  padre[origen] = -1;
-  const cola = [origen];
-  let encontrada = -1;
-  for (let cabeza = 0; cabeza < cola.length && encontrada === -1; cabeza++) {
-    const u = cola[cabeza]!;
-    if (nivel[u]! >= 3) continue;
-    for (const v of grafo.vecinos[u]!) {
-      if (bloqueadas.has(v.arista) || padre[v.nodo] !== -2) continue;
-      padre[v.nodo] = u;
-      nivel[v.nodo] = nivel[u]! + 1;
-      if (presas[v.nodo] === 1) {
-        encontrada = v.nodo;
-        break;
-      }
-      cola.push(v.nodo);
-    }
-  }
-  if (encontrada === -1) return [];
-  const camino: number[] = [];
-  for (let x = encontrada; x !== origen; x = padre[x]!) camino.push(x);
-  return camino.reverse().slice(0, 2);
 }
 
 // ── Campo de costo por refugio (Dijkstra desde el refugio) ──

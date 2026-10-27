@@ -61,6 +61,44 @@ export function movimientosDeCruce(grafo: Grafo, zombies: readonly Zombie[]): Se
   return cruces;
 }
 
+/**
+ * Persecución de un corredor: si hay una presa a 3 nodos o menos (por calles abiertas),
+ * va hacia la más cercana por el camino más corto y avanza 2 calles (o hasta alcanzarla).
+ * Devuelve los nodos que recorre, sin el de partida; vacío si no persigue a nadie.
+ * La usan el simulador para moverlo y el motor para predecirlo, así que coinciden.
+ */
+export function persecucionDeCorredor(
+  grafo: Grafo,
+  origen: number,
+  presas: Uint8Array,
+  bloqueadas: ReadonlySet<number>,
+): number[] {
+  if (presas[origen] === 1) return [];
+  const padre = new Int32Array(grafo.ids.length).fill(-2);
+  const nivel = new Int32Array(grafo.ids.length);
+  padre[origen] = -1;
+  const cola = [origen];
+  let encontrada = -1;
+  for (let cabeza = 0; cabeza < cola.length && encontrada === -1; cabeza++) {
+    const u = cola[cabeza]!;
+    if (nivel[u]! >= 3) continue;
+    for (const v of grafo.vecinos[u]!) {
+      if (bloqueadas.has(v.arista) || padre[v.nodo] !== -2) continue;
+      padre[v.nodo] = u;
+      nivel[v.nodo] = nivel[u]! + 1;
+      if (presas[v.nodo] === 1) {
+        encontrada = v.nodo;
+        break;
+      }
+      cola.push(v.nodo);
+    }
+  }
+  if (encontrada === -1) return [];
+  const camino: number[] = [];
+  for (let x = encontrada; x !== origen; x = padre[x]!) camino.push(x);
+  return camino.reverse().slice(0, 2);
+}
+
 /** True si el movimiento termina en mordida según las reglas: nodo mortal o cruce. */
 export function esMordida(
   grafo: Grafo,

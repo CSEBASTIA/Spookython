@@ -4,7 +4,7 @@ Motor de rutas en tiempo real para el **Track A** del hackatón: la noche del 31
 
 Cambiando «zombie» por «calle cerrada» o «zona inundada», el mismo motor sirve para una ruta de evacuación ante un tsunami en la costa de Manabí, para despachar ambulancias o para una app de delivery.
 
-> **Estado al 27 de octubre de 2026.** El motor de rutas está terminado y probado. El simulador y el mapa en vivo están en construcción, y la infraestructura está escrita pero todavía no está desplegada. La sección [Estado del proyecto](#estado-del-proyecto) dice qué falta.
+> **Estado al 27 de octubre de 2026.** El motor de rutas, el simulador y el grafo real de Manta están terminados y probados juntos en local. El mapa en vivo está en construcción, y la infraestructura está escrita pero todavía no está desplegada. La sección [Estado del proyecto](#estado-del-proyecto) dice qué falta.
 
 ## Índice
 
@@ -136,14 +136,20 @@ Servicios de AWS: CloudFront, S3, Application Load Balancer, ECS Fargate, ECR, D
 │  ├─ arquitectura.svg     ← diagrama (y .png, .mmd)
 │  └─ budget.png           ← captura del AWS Budget (pendiente)
 ├─ data/
-│  └─ prueba.json          ← grafo de prueba de 10×10 con el formato del mapa real
+│  ├─ manta.json           ← grafo de Manta: 284 intersecciones, 4 barrios, 4 refugios
+│  ├─ raw/                 ← descarga cruda de OpenStreetMap (Overpass)
+│  ├─ estado-ejemplo.json  ← un GET /estado real, para el mapa
+│  └─ prueba.json          ← grafo de prueba de 10×10 con el mismo formato
 ├─ scripts/
-│  ├─ copiar-mapa.mjs      ← mete el mapa dentro de la imagen del servicio
+│  ├─ construir-grafo.ts   ← arma data/manta.json desde OpenStreetMap
+│  ├─ banco.ts             ← partidas sin red: motor contra simulador
+│  ├─ carga.ts             ← prueba de carga contra POST /paso
+│  ├─ copiar-mapa.mjs      ← mete el mapa dentro de la imagen de cada servicio
 │  └─ generar-prueba.ts    ← regenera data/prueba.json
 ├─ src/
 │  ├─ compartido/          ← contrato, grafo y reglas que usan el motor y el simulador
 │  ├─ motor/               ← POST /paso, POST /rutas y GET /salud
-│  └─ simulador/           ← GET /estado y /admin/* (por ahora, esqueleto)
+│  └─ simulador/           ← el juego, las rondas, GET /estado y /admin/*
 ├─ infra/                  ← AWS CDK: todo el sistema en AWS
 ├─ .env.example            ← variables para correr en local (sin llaves reales)
 ├─ vitest.config.ts
@@ -212,18 +218,35 @@ El motor **no guarda estado propio**: lee el estado del turno en DynamoDB, arma 
 
 ### `src/simulador`: el Simulador del Apocalipsis
 
-Hoy es un **esqueleto desplegable**: publica `GET /estado` vacío, protege `/admin/*` con su propia llave y trae `POST /admin/probar-motor`, que manda 50 pedidos a `/paso` por la URL pública y devuelve p50, p95 y máximo. En construcción (ver [`docs/plan.md`, sección 6](docs/plan.md#6-simulador-b)):
+Es el dueño del juego y el que usa el jurado en la prueba de fuego, así que aplica las reglas del reto tal cual, sin trucos a favor del motor.
 
-- núcleo puro del juego (`juego.ts`) con los 4 tipos de zombie, mordidas, eventos, refugios con capacidad y semilla fija;
-- bucle de 2 s que guarda el estado en DynamoDB, pide los `/paso` en paralelo con un corte de 500 ms y aplica los resultados;
-- `/admin/ronda`, `/admin/bloquear` y `/admin/detener`;
-- métricas por ronda y el puntaje con la misma rúbrica del reto.
+| Archivo | Qué hace |
+|---|---|
+| [`juego.ts`](src/simulador/src/juego.ts) | **Núcleo puro del juego**: no toca la red ni el reloj, y con la misma semilla juega siempre la misma partida. Reparte a los sobrevivientes entre los 4 barrios y a los zombies lo más lejos posible de ellos. Mueve a cada tipo de zombie, aplica los eventos de la ciudad y juzga mordidas y llegadas con las mismas reglas compartidas que usa el motor. |
+| [`rondas.ts`](src/simulador/src/rondas.ts) | Las 3 rondas: sobrevivientes, zombies de cada tipo y eventos. |
+| [`puntaje.ts`](src/simulador/src/puntaje.ts) | Percentiles de latencia y el puntaje estimado con la rúbrica del reto. |
+| [`destino.ts`](src/simulador/src/destino.ts) | Guarda el estado de cada turno: en DynamoDB en AWS (con TTL de 1 hora) o en un archivo en local. |
+| [`metricas-cloudwatch.ts`](src/simulador/src/metricas-cloudwatch.ts) | Publica la latencia de cada turno como la métrica `LatenciaPaso` en CloudWatch. |
+| [`index.ts`](src/simulador/src/index.ts) | Servidor: el bucle de 2 s, `GET /estado` y las rutas de administración. |
 
-| Ronda | Sobrevivientes | Zombies (propuesta) | Eventos |
-|---|---:|---|---|
-| R1 · Anochecer | 20 | 15 caminantes | — |
-| R2 · Medianoche | 80 | 20 caminantes, 8 corredores, 3 hordas | Un puente colapsa |
-| R3 · Apocalipsis | 200 | 30 caminantes, 12 corredores, 4 hordas, 15 dormidos | Dos calles se bloquean en vivo |
+**Cómo se mueve cada zombie:**
+
+- **Caminante:** 1 calle cada 2 turnos, a un vecino al azar por una calle abierta.
+- **Corredor:** 2 calles por turno. Si alguien está a 3 nodos o menos, lo persigue por el camino más corto (la misma función que usa el motor para predecirlo); si no, camina al azar sin volver atrás.
+- **Horda:** 1 calle cada 10 turnos, y nunca a menos de 3 calles de un refugio, para no bloquearlo para siempre.
+- **Dormido:** no se mueve ni aparece en el estado. Cuando alguien pasa a 2 nodos o menos, despierta como caminante y se anuncia en los eventos.
+
+**Cada turno** (cada 2 s, compensando el desfase): mueve a los zombies → guarda el estado → pide todos los `POST /paso` en paralelo con un corte de 500 ms → pide `POST /rutas` para el mapa → aplica los pasos (uno inválido, tardío o con error es quedarse quieto) → juzga mordidas y llegadas → publica la latencia. La ronda termina a los 150 turnos o cuando ya nadie huye.
+
+**`GET /estado`** se arma y se comprime con gzip una sola vez por turno, porque el mapa lo consulta cada segundo. Tiene el turno, los zombies visibles, las calles bloqueadas, los sobrevivientes, la ocupación de los refugios, las rutas planificadas, la latencia en vivo, el resultado parcial, el historial de rondas, el puntaje estimado y los últimos eventos. Un ejemplo real, del turno 25 de la ronda 3, está en [`data/estado-ejemplo.json`](data/estado-ejemplo.json).
+
+| Ronda | Sobrevivientes | Zombies | Eventos | Semilla |
+|---|---:|---|---|---:|
+| R1 · Anochecer | 20 | 15 caminantes | — | 101 |
+| R2 · Medianoche | 80 | 20 caminantes, 8 corredores, 3 hordas | Un puente colapsa en el turno 10 | 202 |
+| R3 · Apocalipsis | 200 | 30 caminantes, 12 corredores, 4 hordas, 15 dormidos | Dos calles se bloquean (turnos 8 y 16), más las que bloquee el presentador | 303 |
+
+Los eventos van temprano porque en el mapa de Manta casi todos llegan a un refugio en menos de 40 turnos: más tarde, nadie los vería. Al bloquear una calle, el simulador elige una que no deje a nadie sin camino a un refugio y, si puede, cerca de alguien que todavía huye.
 
 ### Mapa en vivo (en construcción)
 
@@ -244,11 +267,43 @@ Vite + TypeScript + Leaflet, publicado en S3 detrás de CloudFront. Dibuja las c
 | CloudWatch | Logs de 7 días, panel con p95 de `/paso`, errores y CPU, y alarmas por latencia y por errores 5xx |
 | IAM | Mínimo privilegio: el motor solo puede hacer `GetItem` en la tabla; el simulador, `GetItem` y `PutItem` y publicar métricas en su namespace |
 
-### `scripts` y `data`
+### El grafo de Manta (`data/manta.json`)
 
-- [`scripts/copiar-mapa.mjs`](scripts/copiar-mapa.mjs) copia el mapa a `dist/mapa.json` al compilar el motor: usa `data/manta.json` si existe y, si no, `data/prueba.json`. Así el mapa va dentro de la imagen y no se descarga en cada arranque.
-- [`scripts/generar-prueba.ts`](scripts/generar-prueba.ts) regenera `data/prueba.json`.
-- `data/manta.json` (el grafo real de Manta) está en construcción con `scripts/construir-grafo.ts`.
+Lo arma [`scripts/construir-grafo.ts`](scripts/construir-grafo.ts) (`npm run grafo`) desde OpenStreetMap. La descarga cruda de Overpass queda en `data/raw/overpass-vias.json`, así se puede rearmar aunque Overpass no responda.
+
+1. Toma las vías de una caja que cubre los 4 barrios y los 4 refugios, y las corta en su borde.
+2. Las avenidas y calles principales entran todas. Las residenciales entran solo si están cerca de un barrio **caminando por la red**, no en línea recta: así cada barrio queda conectado al resto de la ciudad.
+3. Los nodos son las intersecciones; las que están a menos de 25 m se fusionan.
+4. Se queda con el componente conexo más grande y quita los nodos de paso (con solo 2 calles), sin juntar nunca un puente con una calle normal.
+5. Poda las puntas sin salida que son artificiales (calles que siguen en OpenStreetMap pero quedaron fuera del recorte). Las que quedan son callejones sin salida reales y pasan a ser `callejon`.
+6. Ajusta solo el radio alrededor de los barrios hasta quedar cerca de 300 nodos, y valida el resultado: todos los nodos llegan a un refugio, hay al menos un puente y cada barrio tiene 10 nodos o más.
+
+**Resultado:** 284 intersecciones y 481 calles (179 avenidas, 282 calles, 9 callejones y 11 puentes). Ningún nodo está a más de 15 calles de un refugio.
+
+| Barrio | Nodos | Centro (lugar de OpenStreetMap) |
+|---|---:|---|
+| Tarqui | 84 | Tarqui Centro |
+| Jocay | 73 | Jocay |
+| Los Esteros | 22 | Los Esteros |
+| Barbasquillo | 13 | Barbasquillo |
+
+| Refugio | Capacidad |
+|---|---:|
+| R-1 · Mall del Pacífico | 80 |
+| R-2 · Estadio Municipal Jocay | 70 |
+| R-3 · Hospital Rodríguez Zambrano | 60 |
+| R-4 · Megaparque Centenario | 30 |
+
+Cada refugio queda en la intersección más cercana al lugar, a entre 134 y 228 m de su centro.
+
+### Los demás scripts
+
+| Script | Comando | Para qué |
+|---|---|---|
+| [`banco.ts`](scripts/banco.ts) | `npm run banco -- --ronda 3 --partidas 100` | Juega partidas completas con el simulador y el motor en memoria, sin red, y muestra supervivencia y eficiencia. Sirve para ajustar los pesos del motor. |
+| [`carga.ts`](scripts/carga.ts) | `URL=… API_KEY=… npm run carga` | Manda 200 `POST /paso` a la vez cada 2 s durante 5 minutos y da el p95 y la tasa de errores con las notas de la rúbrica. |
+| [`copiar-mapa.mjs`](scripts/copiar-mapa.mjs) | (lo usa `npm run build`) | Copia el mapa a `dist/mapa.json` del motor y del simulador: usa `data/manta.json` si existe y, si no, `data/prueba.json`. Así el mapa va dentro de la imagen. |
+| [`generar-prueba.ts`](scripts/generar-prueba.ts) | `npm run mapa:prueba` | Regenera la cuadrícula de prueba de 10×10. |
 
 ---
 
@@ -296,16 +351,16 @@ Instalar las dependencias:
 npm install
 ```
 
-Correr las pruebas (28 hoy: grafo, reglas, planificador, reparto, rendimiento y caché):
+Correr las pruebas (47 hoy: grafo, reglas, planificador, reparto, rendimiento, caché, juego, puntaje y partidas del motor contra el simulador):
 
 ```bash
 npm test
 ```
 
-Compilar el motor (deja `src/motor/dist/index.cjs` y `src/motor/dist/mapa.json`):
+Compilar el motor y el simulador (cada uno deja `dist/index.cjs` y `dist/mapa.json` con el mapa de Manta):
 
 ```bash
-npm run build -w @manta/motor
+npm run build
 ```
 
 ### Probar el motor sin DynamoDB
@@ -332,10 +387,10 @@ Guarda este estado como `estado-local.json` en la raíz del repo. Usa la cuadrí
 }
 ```
 
-Arranca el motor en Git Bash, con una llave de prueba cualquiera:
+Arranca el motor en Git Bash con la cuadrícula de prueba y una llave de prueba cualquiera:
 
 ```bash
-API_KEY=llave-local ESTADO_ARCHIVO=estado-local.json node src/motor/dist/index.cjs
+MAPA=data/prueba.json API_KEY=llave-local ESTADO_ARCHIVO=estado-local.json node src/motor/dist/index.cjs
 ```
 
 En otra terminal, pide el paso de S-0002, que está pegado a la horda:
@@ -350,14 +405,55 @@ Responde `{"siguienteNodo":"N-0013","refugio":"R-1"}`: se aleja de la horda ante
 curl -s -X POST http://localhost:8080/rutas -H "x-api-key: llave-local" -H "content-type: application/json" -d '{"turno":1}'
 ```
 
-| Variable | Para qué |
-|---|---|
-| `PUERTO` | Puerto del servidor (8080 por defecto) |
-| `API_KEY` | Llave que se exige en `x-api-key`. En AWS viene de Secrets Manager |
-| `TABLA_MUNDO` | Tabla de DynamoDB con el estado. En AWS la pone el stack |
-| `ESTADO_ARCHIVO` | Solo en local: archivo JSON con el estado, en vez de DynamoDB |
-| `DYNAMO_ENDPOINT` | Solo en local: DynamoDB Local (por ejemplo `http://localhost:8000`) |
-| `MAPA` | Otro mapa base (por defecto `dist/mapa.json`) |
+### Jugar una ronda completa en local
+
+Motor y simulador se hablan por HTTP igual que en AWS; en vez de DynamoDB comparten un archivo con el estado del turno. Abre dos terminales de Git Bash en la raíz del repo. En la primera, el motor:
+
+```bash
+API_KEY=llave-local ESTADO_ARCHIVO=estado-turno.json node src/motor/dist/index.cjs
+```
+
+En la segunda, el simulador, con turnos de 300 ms para no esperar 5 minutos:
+
+```bash
+PUERTO=8081 API_KEY=llave-local ADMIN_KEY=admin-local URL_MOTOR=http://localhost:8080 ESTADO_ARCHIVO=estado-turno.json TURNO_MS=300 node src/simulador/dist/index.cjs
+```
+
+Empieza la ronda 3 (también se puede pasar `"semilla"`):
+
+```bash
+curl -s -X POST http://localhost:8081/admin/ronda -H "x-admin-key: admin-local" -H "content-type: application/json" -d '{"ronda":3}'
+```
+
+Bloquea una calle en vivo, como el presentador:
+
+```bash
+curl -s -X POST http://localhost:8081/admin/bloquear -H "x-admin-key: admin-local" -H "content-type: application/json" -d '{"arista":"E-0100"}'
+```
+
+Mira el estado, que es lo que dibuja el mapa (al terminar, el resultado queda en `historial` y en `puntaje`):
+
+```bash
+curl -s http://localhost:8081/estado
+```
+
+Para medir el motor sin red y con muchas partidas, usa el banco:
+
+```bash
+npm run banco -- --partidas 30
+```
+
+| Variable | Servicio | Para qué |
+|---|---|---|
+| `PUERTO` | Los dos | Puerto del servidor (8080 por defecto) |
+| `API_KEY` | Los dos | Llave de `x-api-key` en `/paso` y `/rutas`. En AWS viene de Secrets Manager |
+| `ADMIN_KEY` | Simulador | Llave de `x-admin-key` en `/admin/*`. En AWS viene de Secrets Manager |
+| `URL_MOTOR` | Simulador | Dónde está el motor. En AWS es la URL pública de CloudFront, como la usaría el jurado |
+| `TABLA_MUNDO` | Los dos | Tabla de DynamoDB con el estado. En AWS la pone el stack |
+| `ESTADO_ARCHIVO` | Los dos | Solo en local: archivo JSON con el estado, en vez de DynamoDB |
+| `DYNAMO_ENDPOINT` | Los dos | Solo en local: DynamoDB Local (por ejemplo `http://localhost:8000`) |
+| `TURNO_MS` | Simulador | Duración del turno (2000 por defecto) |
+| `MAPA` | Los dos | Otro mapa base (por defecto `dist/mapa.json`) |
 
 ---
 
@@ -389,7 +485,8 @@ La guía completa, con cada comando y qué hacer si algo falla, está en [`docs/
 
 - **Fuente oficial:** el simulador cronometra cada `POST /paso` contra la URL pública, igual que lo haría el jurado, desde que envía hasta que recibe la respuesta. Calcula p50, p95 y p99 por ronda. Un pedido de más de 500 ms o con error cuenta como fuera de tiempo. Publica la métrica `LatenciaPaso` en CloudWatch.
 - **Contraste:** el p95 de `TargetResponseTime` del balanceador en el panel de CloudWatch (solo el tiempo dentro de AWS) y la prueba de carga de 200 pedidos a la vez cada 2 s.
-- **En local, hoy:** con el motor compilado y 200 pedidos simultáneos por turno, el p95 quedó entre 33 y 45 ms por turno ya en caliente (unos 120 ms el primer turno, mientras se abren las conexiones), con 0 movimientos inválidos en 2.000 pedidos. En AWS se suma el tiempo de CloudFront y del balanceador.
+- **Banco, en el mapa de Manta** (30 partidas por ronda, sin red): supervivencia de 100 % en R1, 94 % en R2 y 62 % en R3, con eficiencia de 95 %, 86 % y 84 %. El motor tarda 0,3 ms por turno en decidir los pasos de los 200 sobrevivientes.
+- **Las 3 rondas en local, por HTTP** (semillas 101, 202 y 303, motor y simulador compilados en la misma PC): R1 20 de 20 a salvo, R2 80 de 80, R3 100 de 200, sin errores ni pedidos fuera de tiempo, con un p95 de 18, 19 y 129 ms. Puntaje estimado: **8,5 de 10**. En AWS se suma el tiempo de CloudFront y del balanceador.
 
 Puntaje de la prueba de fuego, que el simulador calcula con la misma rúbrica:
 
@@ -441,9 +538,10 @@ Con todo encendido las 24 horas en us-east-1, el sistema cuesta **unos USD 60 al
 
 ## Limitaciones conocidas
 
-- **Pesos sin ajustar.** Los valores de `p1` a `p4`, `λ` y la histéresis son una primera estimación. Falta el banco de pruebas con el simulador real para ajustarlos con 100 partidas por ronda.
-- **Mapa de prueba.** Hasta tener `data/manta.json`, todo corre sobre la cuadrícula de 10×10.
-- **La lectura de DynamoDB no se ha probado contra una tabla real**; las pruebas usan una fuente en memoria y un archivo.
+- **Pesos sin ajustar.** Los valores de `p1` a `p4`, `λ` y la histéresis son una primera estimación. El banco ya funciona, pero todavía no se usó para ajustarlos; la ronda 3 es la que más puede mejorar.
+- **Un grafo recortado.** Manta tiene miles de intersecciones; el juego usa unas 300 alrededor de los barrios y los refugios, como pide el reto. Barbasquillo queda con menos nodos (13) que Tarqui (84).
+- **DynamoDB y CloudWatch no se han probado contra AWS real**; en local, motor y simulador comparten un archivo en vez de la tabla.
+- **Las rondas duran menos de 5 minutos**: terminan cuando ya nadie huye, y en este mapa eso pasa antes de los 40 turnos.
 - **Los dormidos son invisibles** por diseño: el motor no puede evitar uno que todavía no despertó.
 - **Un solo simulador.** Es el dueño del juego y no se replica.
 - **Una sola región.** Si us-east-1 falla, el sistema se cae; para el hackatón no vale la pena pagar otra región.
@@ -507,12 +605,12 @@ Los datos del mapa vienen de OpenStreetMap y están bajo licencia **ODbL**: hay 
 | Parte | Estado |
 |---|---|
 | Plan, contrato y reparto del equipo | ✅ [`docs/plan.md`](docs/plan.md) y [`docs/equipo/`](docs/equipo/) |
-| Motor de rutas (`/paso`, `/rutas`, plan por turno, predicción, capacidad) | ✅ Con 28 pruebas |
+| Motor de rutas (`/paso`, `/rutas`, plan por turno, predicción, capacidad) | ✅ Probado |
+| Grafo real de Manta (`data/manta.json`) | ✅ 284 intersecciones desde OpenStreetMap |
+| Simulador (juego, rondas, eventos, `/estado`, `/admin/*`, puntaje, métrica) | ✅ Probado con el motor en local |
+| Banco de pruebas y prueba de carga | ✅ · ⏳ falta usarlos para ajustar los pesos |
 | Infraestructura en CDK | ✅ Escrita y compila · ⏳ sin desplegar |
-| Grafo real de Manta (`data/manta.json`) | ⏳ En construcción |
-| Simulador | ⏳ Esqueleto desplegable |
-| Mapa en vivo | ⏳ En construcción |
-| Banco de pruebas y ajuste de pesos | ⏳ Necesita el simulador |
+| Mapa en vivo | ⏳ En construcción (ya tiene `data/estado-ejemplo.json`) |
 | Diagrama en draw.io, captura del Budget y gasto real | ⏳ Pendientes |
 
 ---

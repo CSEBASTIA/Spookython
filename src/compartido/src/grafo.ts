@@ -18,6 +18,8 @@ export interface RefugioIndexado {
 export interface Grafo {
   /** Índice → id del nodo. */
   readonly ids: readonly string[];
+  /** Índice → barrio del nodo, o null si no está en ninguno de los 4 barrios. */
+  readonly barrios: readonly (string | null)[];
   /** Id del nodo → índice. */
   readonly indice: ReadonlyMap<string, number>;
   readonly aristas: readonly Arista[];
@@ -74,6 +76,7 @@ export function crearGrafo(mapa: MapaBase): Grafo {
 
   return {
     ids,
+    barrios: mapa.nodos.map((n) => n.barrio ?? null),
     indice,
     aristas: mapa.aristas,
     indiceArista,

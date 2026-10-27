@@ -10,9 +10,12 @@
     "typecheck": "tsc -p infra && npm run typecheck --workspaces --if-present",
     "test": "vitest run",
     "mapa:prueba": "tsx scripts/generar-prueba.ts",
+    "grafo": "tsx scripts/construir-grafo.ts",
     "synth": "npm run build && cdk synth",
     "desplegar": "npm run build && cdk deploy MantaZombie",
-    "destruir": "npm run build && cdk destroy MantaZombie"
+    "destruir": "npm run build && cdk destroy MantaZombie",
+    "banco": "tsx scripts/banco.ts",
+    "carga": "tsx scripts/carga.ts"
   },
   "engines": {
     "node": ">=22"

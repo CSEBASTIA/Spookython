@@ -110,3 +110,70 @@ export interface RespuestaRutas {
   turno: number;
   rutas: Record<string, string[]>;
 }
+
+// ── GET /estado del simulador: lo que dibuja el mapa en vivo ──
+
+/** Latencia de POST /paso medida por el simulador contra la URL del motor. */
+export interface MetricasLatencia {
+  pedidos: number;
+  /** Respuestas con error HTTP, cuerpo inválido o movimiento inválido. */
+  errores: number;
+  /** Pedidos que pasaron de 500 ms: el sobreviviente se quedó quieto. */
+  fueraDeTiempo: number;
+  p50: number | null;
+  p95: number | null;
+  p99: number | null;
+}
+
+export interface ResultadoRonda {
+  ronda: number;
+  semilla: number;
+  turnos: number;
+  total: number;
+  salvados: number;
+  mordidos: number;
+  sinLlegar: number;
+  /** Promedio de turnos mínimos / turnos usados entre los salvados (0 a 1). */
+  eficiencia: number | null;
+  latencia: MetricasLatencia;
+}
+
+/** Puntaje estimado con la rúbrica de la prueba de fuego, de 0 a 10. */
+export interface Puntaje {
+  supervivencia: number;
+  eficiencia: number;
+  latencia: number;
+  disponibilidad: number;
+  total: number;
+  /** Rondas que entran en el cálculo (la última corrida de cada una). */
+  rondas: number[];
+}
+
+export interface RefugioEnVivo extends OcupacionRefugio {
+  nombre: string;
+  nodo: string;
+}
+
+export interface VistaEstado {
+  ronda: number | null;
+  nombreRonda: string | null;
+  semilla: number | null;
+  turno: number;
+  turnosTotales: number;
+  enCurso: boolean;
+  /** Solo los visibles: un dormido aparece cuando despierta. */
+  zombies: Zombie[];
+  aristasBloqueadas: string[];
+  sobrevivientes: Sobreviviente[];
+  refugios: RefugioEnVivo[];
+  /** Rutas planificadas que devolvió el motor en este turno. */
+  rutas: Record<string, string[]>;
+  metricas: MetricasLatencia;
+  /** Resultado de la ronda actual hasta este turno. */
+  resultado: ResultadoRonda | null;
+  /** Última corrida terminada de cada ronda. */
+  historial: ResultadoRonda[];
+  puntaje: Puntaje | null;
+  eventos: { turno: number; texto: string }[];
+  actualizadoEn: string;
+}
