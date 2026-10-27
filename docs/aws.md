@@ -4,7 +4,7 @@ Guía para crear la cuenta, desplegar el sistema, probarlo y apagarlo. Todo se e
 
 | Archivo | Qué es |
 |---|---|
-| [`infra/bin/app.ts`](../infra/bin/app.ts) | App de CDK con el stack `MantaZombie`. **Pendiente de C:** todavía importa `presupuesto-stack.ts`, que ya no existe; hay que quitar ese import, el bloque `if (correoAlertas)` que crea `MantaZombie-Presupuesto` y el script `presupuesto` de `package.json` (el Budget se crea en la consola, sección 2) |
+| [`infra/bin/app.ts`](../infra/bin/app.ts) | App de CDK con el stack `MantaZombie` (el Budget se crea en la consola, sección 2) |
 | [`infra/lib/manta-stack.ts`](../infra/lib/manta-stack.ts) | Todo el sistema: VPC, DynamoDB, secretos, ALB, ECS Fargate, CloudFront, S3, CloudWatch |
 | [`infra/sitio-provisional/`](../infra/sitio-provisional/index.html) | Página que se publica mientras `src/mapa/dist` no exista |
 | `src/motor`, `src/simulador` | **Esqueletos desplegables**: cumplen el contrato pero no juegan. A y B los reemplazan (ver [sección 5](#5-lo-que-la-nube-espera-del-motor-y-del-simulador)) |
@@ -14,35 +14,32 @@ Guía para crear la cuenta, desplegar el sistema, probarlo y apagarlo. Todo se e
 Esto lo hace una persona del equipo con su propia tarjeta y su correo; nadie más debe escribir esos datos.
 
 1. Crear la cuenta en <https://aws.amazon.com/free>.
-2. **MFA en el usuario root:** consola → nombre de la cuenta (arriba a la derecha) → *Security credentials* → *Assign MFA device*. Después de esto, el root no se usa para el trabajo diario.
-3. **Usuario para desplegar:** abrir *IAM Identity Center* en us-east-1 → *Enable*. Crear un usuario y asignarle el conjunto de permisos `AdministratorAccess` sobre la cuenta. Solo lo usa la persona que despliega, con credenciales temporales; las tareas del sistema tienen sus propios roles mínimos.
-4. **Instalar AWS CLI** en la PC que despliega. Con winget:
+2. **MFA en el usuario root:** consola → nombre de la cuenta (arriba a la derecha) → *Security credentials* → *Assign MFA device*.
+3. **Instalar AWS CLI** (2.32 o más nueva) en la PC que despliega. Con winget:
 
    ```bash
    winget install -e --id Amazon.AWSCLI
    ```
 
-   Después cerrar y volver a abrir la terminal.
-5. **Iniciar sesión** con el usuario de Identity Center (pide la URL del portal que muestra Identity Center; la región es `us-east-1` y el nombre de perfil puede ser `manta`):
+   Después cerrar y volver a abrir la terminal, y revisar la versión con `aws --version`.
+4. **Iniciar sesión** con `aws login`: abre el navegador, se entra con la misma cuenta de la consola y la CLI recibe credenciales **temporales** (hasta 12 horas). No se crean *access keys*, que son lo que se filtra en los repos. Cuando pregunte la región, `us-east-1`; si después pregunta por «AWS skills» o el servidor MCP para asistentes de IA, responder `n`.
 
    ```bash
-   aws configure sso
+   aws login
    ```
 
-   Cada vez que caduque la sesión:
-
-   ```bash
-   aws sso login --profile manta
-   ```
-
-   En cada terminal nueva hay que decir qué perfil usar: en Git Bash `export AWS_PROFILE=manta`, en PowerShell `$env:AWS_PROFILE="manta"`.
-6. Verificar que la CLI ve la cuenta:
+   Cuando caduque la sesión, se repite el mismo comando. Se eligió `aws login` en vez de IAM Identity Center porque no necesita activar AWS Organizations ni crear usuarios aparte.
+5. Verificar que la CLI ve la cuenta y la región:
 
    ```bash
    aws sts get-caller-identity
    ```
 
-7. **Cupo de Fargate.** El sistema usa como máximo 1,75 vCPU (hasta 6 motores y 1 simulador de 0,25 vCPU). Las cuentas nuevas a veces traen un cupo bajo:
+   ```bash
+   aws ec2 describe-availability-zones --region us-east-1 --query "AvailabilityZones[].ZoneName"
+   ```
+
+6. **Cupo de Fargate.** El sistema usa como máximo 1,75 vCPU (hasta 6 motores y 1 simulador de 0,25 vCPU). Las cuentas nuevas a veces traen un cupo bajo:
 
    ```bash
    aws service-quotas get-service-quota --service-code fargate --quota-code L-3032A538 --query Quota.Value
@@ -52,7 +49,7 @@ Esto lo hace una persona del equipo con su propia tarjeta y su correo; nadie má
 
 ## 2. Presupuesto (antes de cualquier otra cosa)
 
-El Budget se crea **a mano en la consola**, siguiendo la guía oficial [Creating a budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-create.html). El reto lo pide desde el primer día y la captura sale de la misma pantalla. Se puede hacer con el usuario root (con MFA) o con el usuario de Identity Center.
+El Budget se crea **a mano en la consola**, siguiendo la guía oficial [Creating a budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-create.html). El reto lo pide desde el primer día y la captura sale de la misma pantalla. Se hace con el usuario root, protegido con MFA.
 
 1. Abrir la consola de [Billing and Cost Management](https://console.aws.amazon.com/cost-management/) → en el menú, **Budgets** → **Create budget**.
 2. En *Budget setup* elegir **Use a template (simplified)** y la plantilla **Monthly cost budget** (avisa si el gasto real supera el presupuesto o si el pronóstico lo va a superar).
@@ -176,7 +173,7 @@ A y B pueden cambiar todo el código de `src/motor` y `src/simulador` mientras m
 
 | Síntoma | Causa probable y solución |
 |---|---|
-| `Unable to resolve AWS account to use` | La sesión de SSO caducó o falta `AWS_PROFILE`: `aws sso login --profile manta` |
+| `Unable to resolve AWS account to use` o un error de credenciales vencidas | La sesión caducó: repetir `aws login` |
 | `Falta src/motor/dist/index.cjs` | Se ejecutó `cdk` sin compilar: usar `npm run desplegar` o `npm run build` primero |
 | `Cannot connect to the Docker daemon` | Abrir Docker Desktop y esperar a que diga *Engine running* |
 | Falla la imagen ARM64 | Desplegar con `-c arquitectura=x86` |

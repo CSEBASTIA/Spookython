@@ -11,7 +11,6 @@
     "test": "vitest run",
     "mapa:prueba": "tsx scripts/generar-prueba.ts",
     "synth": "npm run build && cdk synth",
-    "presupuesto": "npm run build && cdk deploy MantaZombie-Presupuesto",
     "desplegar": "npm run build && cdk deploy MantaZombie",
     "destruir": "npm run build && cdk destroy MantaZombie"
   },

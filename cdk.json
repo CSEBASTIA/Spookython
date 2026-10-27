@@ -4,7 +4,6 @@
     "include": ["infra/**"]
   },
   "context": {
-    "limiteUsd": 25,
     "arquitectura": "arm64",
     "motorMinimo": 2
   }
