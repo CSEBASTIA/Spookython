@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manta Zombie · en construcción</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { max-width: 40rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+    code, pre { font-family: ui-monospace, Consolas, monospace; }
+    pre { background: #8881; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+    .ok { color: #0a7448; } .mal { color: #b42318; }
+  </style>
+</head>
+<body>
+  <h1>Escape de Manta Zombie</h1>
+  <p>El mapa en vivo todavía no está desplegado. Esta página provisional comprueba que CloudFront llega al simulador.</p>
+  <p>GET <code>/estado</code>: <strong id="resultado">consultando…</strong></p>
+  <pre id="estado"></pre>
+  <script>
+    async function consultar() {
+      const resultado = document.getElementById('resultado');
+      try {
+        const respuesta = await fetch('/estado', { cache: 'no-store' });
+        const cuerpo = await respuesta.json();
+        resultado.textContent = respuesta.ok ? 'responde (' + new Date().toLocaleTimeString() + ')' : 'error HTTP ' + respuesta.status;
+        resultado.className = respuesta.ok ? 'ok' : 'mal';
+        document.getElementById('estado').textContent = JSON.stringify(cuerpo, null, 2);
+      } catch (error) {
+        resultado.textContent = 'no responde: ' + error.message;
+        resultado.className = 'mal';
+      }
+    }
+    consultar();
+    setInterval(consultar, 2000);
+  </script>
+</body>
+</html>

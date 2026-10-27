@@ -1,0 +1,10 @@
+{
+  "name": "@manta/simulador",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --format=cjs --outfile=dist/index.cjs",
+    "start": "node dist/index.cjs",
+    "typecheck": "tsc -p tsconfig.json"
+  }
+}

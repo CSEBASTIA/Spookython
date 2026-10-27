@@ -1,0 +1,1892 @@
+{
+  "nodos": [
+    {
+      "id": "N-0000",
+      "lat": -0.945,
+      "lng": -80.735,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0001",
+      "lat": -0.945,
+      "lng": -80.7341,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0002",
+      "lat": -0.945,
+      "lng": -80.7332,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0003",
+      "lat": -0.945,
+      "lng": -80.7323,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0004",
+      "lat": -0.945,
+      "lng": -80.7314,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0005",
+      "lat": -0.945,
+      "lng": -80.7305,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0006",
+      "lat": -0.945,
+      "lng": -80.7296,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0007",
+      "lat": -0.945,
+      "lng": -80.7287,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0008",
+      "lat": -0.945,
+      "lng": -80.7278,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0009",
+      "lat": -0.945,
+      "lng": -80.7269,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0010",
+      "lat": -0.9459,
+      "lng": -80.735,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0011",
+      "lat": -0.9459,
+      "lng": -80.7341,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0012",
+      "lat": -0.9459,
+      "lng": -80.7332,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0013",
+      "lat": -0.9459,
+      "lng": -80.7323,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0014",
+      "lat": -0.9459,
+      "lng": -80.7314,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0015",
+      "lat": -0.9459,
+      "lng": -80.7305,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0016",
+      "lat": -0.9459,
+      "lng": -80.7296,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0017",
+      "lat": -0.9459,
+      "lng": -80.7287,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0018",
+      "lat": -0.9459,
+      "lng": -80.7278,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0019",
+      "lat": -0.9459,
+      "lng": -80.7269,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0020",
+      "lat": -0.9468,
+      "lng": -80.735,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0021",
+      "lat": -0.9468,
+      "lng": -80.7341,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0022",
+      "lat": -0.9468,
+      "lng": -80.7332,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0023",
+      "lat": -0.9468,
+      "lng": -80.7323,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0024",
+      "lat": -0.9468,
+      "lng": -80.7314,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0025",
+      "lat": -0.9468,
+      "lng": -80.7305,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0026",
+      "lat": -0.9468,
+      "lng": -80.7296,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0027",
+      "lat": -0.9468,
+      "lng": -80.7287,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0028",
+      "lat": -0.9468,
+      "lng": -80.7278,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0029",
+      "lat": -0.9468,
+      "lng": -80.7269,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0030",
+      "lat": -0.9477,
+      "lng": -80.735,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0031",
+      "lat": -0.9477,
+      "lng": -80.7341,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0032",
+      "lat": -0.9477,
+      "lng": -80.7332,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0033",
+      "lat": -0.9477,
+      "lng": -80.7323,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0034",
+      "lat": -0.9477,
+      "lng": -80.7314,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0035",
+      "lat": -0.9477,
+      "lng": -80.7305,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0036",
+      "lat": -0.9477,
+      "lng": -80.7296,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0037",
+      "lat": -0.9477,
+      "lng": -80.7287,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0038",
+      "lat": -0.9477,
+      "lng": -80.7278,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0039",
+      "lat": -0.9477,
+      "lng": -80.7269,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0040",
+      "lat": -0.9486,
+      "lng": -80.735,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0041",
+      "lat": -0.9486,
+      "lng": -80.7341,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0042",
+      "lat": -0.9486,
+      "lng": -80.7332,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0043",
+      "lat": -0.9486,
+      "lng": -80.7323,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0044",
+      "lat": -0.9486,
+      "lng": -80.7314,
+      "barrio": "Tarqui"
+    },
+    {
+      "id": "N-0045",
+      "lat": -0.9486,
+      "lng": -80.7305,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0046",
+      "lat": -0.9486,
+      "lng": -80.7296,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0047",
+      "lat": -0.9486,
+      "lng": -80.7287,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0048",
+      "lat": -0.9486,
+      "lng": -80.7278,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0049",
+      "lat": -0.9486,
+      "lng": -80.7269,
+      "barrio": "Los Esteros"
+    },
+    {
+      "id": "N-0050",
+      "lat": -0.9494999999999999,
+      "lng": -80.735,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0051",
+      "lat": -0.9494999999999999,
+      "lng": -80.7341,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0052",
+      "lat": -0.9494999999999999,
+      "lng": -80.7332,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0053",
+      "lat": -0.9494999999999999,
+      "lng": -80.7323,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0054",
+      "lat": -0.9494999999999999,
+      "lng": -80.7314,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0055",
+      "lat": -0.9494999999999999,
+      "lng": -80.7305,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0056",
+      "lat": -0.9494999999999999,
+      "lng": -80.7296,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0057",
+      "lat": -0.9494999999999999,
+      "lng": -80.7287,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0058",
+      "lat": -0.9494999999999999,
+      "lng": -80.7278,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0059",
+      "lat": -0.9494999999999999,
+      "lng": -80.7269,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0060",
+      "lat": -0.9503999999999999,
+      "lng": -80.735,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0061",
+      "lat": -0.9503999999999999,
+      "lng": -80.7341,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0062",
+      "lat": -0.9503999999999999,
+      "lng": -80.7332,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0063",
+      "lat": -0.9503999999999999,
+      "lng": -80.7323,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0064",
+      "lat": -0.9503999999999999,
+      "lng": -80.7314,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0065",
+      "lat": -0.9503999999999999,
+      "lng": -80.7305,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0066",
+      "lat": -0.9503999999999999,
+      "lng": -80.7296,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0067",
+      "lat": -0.9503999999999999,
+      "lng": -80.7287,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0068",
+      "lat": -0.9503999999999999,
+      "lng": -80.7278,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0069",
+      "lat": -0.9503999999999999,
+      "lng": -80.7269,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0070",
+      "lat": -0.9512999999999999,
+      "lng": -80.735,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0071",
+      "lat": -0.9512999999999999,
+      "lng": -80.7341,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0072",
+      "lat": -0.9512999999999999,
+      "lng": -80.7332,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0073",
+      "lat": -0.9512999999999999,
+      "lng": -80.7323,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0074",
+      "lat": -0.9512999999999999,
+      "lng": -80.7314,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0075",
+      "lat": -0.9512999999999999,
+      "lng": -80.7305,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0076",
+      "lat": -0.9512999999999999,
+      "lng": -80.7296,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0077",
+      "lat": -0.9512999999999999,
+      "lng": -80.7287,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0078",
+      "lat": -0.9512999999999999,
+      "lng": -80.7278,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0079",
+      "lat": -0.9512999999999999,
+      "lng": -80.7269,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0080",
+      "lat": -0.9521999999999999,
+      "lng": -80.735,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0081",
+      "lat": -0.9521999999999999,
+      "lng": -80.7341,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0082",
+      "lat": -0.9521999999999999,
+      "lng": -80.7332,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0083",
+      "lat": -0.9521999999999999,
+      "lng": -80.7323,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0084",
+      "lat": -0.9521999999999999,
+      "lng": -80.7314,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0085",
+      "lat": -0.9521999999999999,
+      "lng": -80.7305,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0086",
+      "lat": -0.9521999999999999,
+      "lng": -80.7296,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0087",
+      "lat": -0.9521999999999999,
+      "lng": -80.7287,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0088",
+      "lat": -0.9521999999999999,
+      "lng": -80.7278,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0089",
+      "lat": -0.9521999999999999,
+      "lng": -80.7269,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0090",
+      "lat": -0.9531,
+      "lng": -80.735,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0091",
+      "lat": -0.9531,
+      "lng": -80.7341,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0092",
+      "lat": -0.9531,
+      "lng": -80.7332,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0093",
+      "lat": -0.9531,
+      "lng": -80.7323,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0094",
+      "lat": -0.9531,
+      "lng": -80.7314,
+      "barrio": "Barbasquillo"
+    },
+    {
+      "id": "N-0095",
+      "lat": -0.9531,
+      "lng": -80.7305,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0096",
+      "lat": -0.9531,
+      "lng": -80.7296,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0097",
+      "lat": -0.9531,
+      "lng": -80.7287,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0098",
+      "lat": -0.9531,
+      "lng": -80.7278,
+      "barrio": "Jocay"
+    },
+    {
+      "id": "N-0099",
+      "lat": -0.9531,
+      "lng": -80.7269,
+      "barrio": "Jocay"
+    }
+  ],
+  "aristas": [
+    {
+      "id": "E-0000",
+      "a": "N-0000",
+      "b": "N-0001",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0001",
+      "a": "N-0000",
+      "b": "N-0010",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0002",
+      "a": "N-0001",
+      "b": "N-0002",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0003",
+      "a": "N-0001",
+      "b": "N-0011",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0004",
+      "a": "N-0002",
+      "b": "N-0003",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0005",
+      "a": "N-0002",
+      "b": "N-0012",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0006",
+      "a": "N-0003",
+      "b": "N-0004",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0007",
+      "a": "N-0003",
+      "b": "N-0013",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0008",
+      "a": "N-0004",
+      "b": "N-0005",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0009",
+      "a": "N-0004",
+      "b": "N-0014",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0010",
+      "a": "N-0005",
+      "b": "N-0006",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0011",
+      "a": "N-0005",
+      "b": "N-0015",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0012",
+      "a": "N-0006",
+      "b": "N-0007",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0013",
+      "a": "N-0006",
+      "b": "N-0016",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0014",
+      "a": "N-0007",
+      "b": "N-0008",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0015",
+      "a": "N-0007",
+      "b": "N-0017",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0016",
+      "a": "N-0008",
+      "b": "N-0009",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0017",
+      "a": "N-0008",
+      "b": "N-0018",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0018",
+      "a": "N-0009",
+      "b": "N-0019",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0019",
+      "a": "N-0010",
+      "b": "N-0011",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0020",
+      "a": "N-0010",
+      "b": "N-0020",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0021",
+      "a": "N-0011",
+      "b": "N-0012",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0022",
+      "a": "N-0011",
+      "b": "N-0021",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0023",
+      "a": "N-0012",
+      "b": "N-0013",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0024",
+      "a": "N-0012",
+      "b": "N-0022",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0025",
+      "a": "N-0013",
+      "b": "N-0014",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0026",
+      "a": "N-0013",
+      "b": "N-0023",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0027",
+      "a": "N-0014",
+      "b": "N-0015",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0028",
+      "a": "N-0014",
+      "b": "N-0024",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0029",
+      "a": "N-0015",
+      "b": "N-0016",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0030",
+      "a": "N-0015",
+      "b": "N-0025",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0031",
+      "a": "N-0016",
+      "b": "N-0017",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0032",
+      "a": "N-0016",
+      "b": "N-0026",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0033",
+      "a": "N-0017",
+      "b": "N-0018",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0034",
+      "a": "N-0017",
+      "b": "N-0027",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0035",
+      "a": "N-0018",
+      "b": "N-0019",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0036",
+      "a": "N-0018",
+      "b": "N-0028",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0037",
+      "a": "N-0019",
+      "b": "N-0029",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0038",
+      "a": "N-0020",
+      "b": "N-0021",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0039",
+      "a": "N-0020",
+      "b": "N-0030",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0040",
+      "a": "N-0021",
+      "b": "N-0022",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0041",
+      "a": "N-0021",
+      "b": "N-0031",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0042",
+      "a": "N-0022",
+      "b": "N-0023",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0043",
+      "a": "N-0022",
+      "b": "N-0032",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0044",
+      "a": "N-0023",
+      "b": "N-0024",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0045",
+      "a": "N-0023",
+      "b": "N-0033",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0046",
+      "a": "N-0024",
+      "b": "N-0025",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0047",
+      "a": "N-0024",
+      "b": "N-0034",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0048",
+      "a": "N-0025",
+      "b": "N-0026",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0049",
+      "a": "N-0025",
+      "b": "N-0035",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0050",
+      "a": "N-0026",
+      "b": "N-0027",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0051",
+      "a": "N-0026",
+      "b": "N-0036",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0052",
+      "a": "N-0027",
+      "b": "N-0028",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0053",
+      "a": "N-0027",
+      "b": "N-0037",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0054",
+      "a": "N-0028",
+      "b": "N-0029",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0055",
+      "a": "N-0028",
+      "b": "N-0038",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0056",
+      "a": "N-0029",
+      "b": "N-0039",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0057",
+      "a": "N-0030",
+      "b": "N-0031",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0058",
+      "a": "N-0030",
+      "b": "N-0040",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0059",
+      "a": "N-0031",
+      "b": "N-0032",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0060",
+      "a": "N-0031",
+      "b": "N-0041",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0061",
+      "a": "N-0032",
+      "b": "N-0033",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0062",
+      "a": "N-0032",
+      "b": "N-0042",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0063",
+      "a": "N-0033",
+      "b": "N-0034",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0064",
+      "a": "N-0033",
+      "b": "N-0043",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0065",
+      "a": "N-0034",
+      "b": "N-0035",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0066",
+      "a": "N-0034",
+      "b": "N-0044",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0067",
+      "a": "N-0035",
+      "b": "N-0036",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0068",
+      "a": "N-0035",
+      "b": "N-0045",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0069",
+      "a": "N-0036",
+      "b": "N-0037",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0070",
+      "a": "N-0036",
+      "b": "N-0046",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0071",
+      "a": "N-0037",
+      "b": "N-0038",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0072",
+      "a": "N-0037",
+      "b": "N-0047",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0073",
+      "a": "N-0038",
+      "b": "N-0039",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0074",
+      "a": "N-0038",
+      "b": "N-0048",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0075",
+      "a": "N-0039",
+      "b": "N-0049",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0076",
+      "a": "N-0040",
+      "b": "N-0041",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0077",
+      "a": "N-0040",
+      "b": "N-0050",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0078",
+      "a": "N-0041",
+      "b": "N-0042",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0079",
+      "a": "N-0041",
+      "b": "N-0051",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0080",
+      "a": "N-0042",
+      "b": "N-0043",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0081",
+      "a": "N-0042",
+      "b": "N-0052",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0082",
+      "a": "N-0043",
+      "b": "N-0044",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0083",
+      "a": "N-0043",
+      "b": "N-0053",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0084",
+      "a": "N-0044",
+      "b": "N-0045",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0085",
+      "a": "N-0044",
+      "b": "N-0054",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0086",
+      "a": "N-0045",
+      "b": "N-0046",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0087",
+      "a": "N-0045",
+      "b": "N-0055",
+      "distancia_m": 100,
+      "tipo": "puente"
+    },
+    {
+      "id": "E-0088",
+      "a": "N-0046",
+      "b": "N-0047",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0089",
+      "a": "N-0046",
+      "b": "N-0056",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0090",
+      "a": "N-0047",
+      "b": "N-0048",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0091",
+      "a": "N-0047",
+      "b": "N-0057",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0092",
+      "a": "N-0048",
+      "b": "N-0049",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0093",
+      "a": "N-0048",
+      "b": "N-0058",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0094",
+      "a": "N-0049",
+      "b": "N-0059",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0095",
+      "a": "N-0050",
+      "b": "N-0051",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0096",
+      "a": "N-0050",
+      "b": "N-0060",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0097",
+      "a": "N-0051",
+      "b": "N-0052",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0098",
+      "a": "N-0051",
+      "b": "N-0061",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0099",
+      "a": "N-0052",
+      "b": "N-0053",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0100",
+      "a": "N-0052",
+      "b": "N-0062",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0101",
+      "a": "N-0053",
+      "b": "N-0054",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0102",
+      "a": "N-0053",
+      "b": "N-0063",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0103",
+      "a": "N-0054",
+      "b": "N-0055",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0104",
+      "a": "N-0054",
+      "b": "N-0064",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0105",
+      "a": "N-0055",
+      "b": "N-0056",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0106",
+      "a": "N-0055",
+      "b": "N-0065",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0107",
+      "a": "N-0056",
+      "b": "N-0057",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0108",
+      "a": "N-0056",
+      "b": "N-0066",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0109",
+      "a": "N-0057",
+      "b": "N-0058",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0110",
+      "a": "N-0057",
+      "b": "N-0067",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0111",
+      "a": "N-0058",
+      "b": "N-0059",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0112",
+      "a": "N-0058",
+      "b": "N-0068",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0113",
+      "a": "N-0059",
+      "b": "N-0069",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0114",
+      "a": "N-0060",
+      "b": "N-0061",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0115",
+      "a": "N-0060",
+      "b": "N-0070",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0116",
+      "a": "N-0061",
+      "b": "N-0062",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0117",
+      "a": "N-0061",
+      "b": "N-0071",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0118",
+      "a": "N-0062",
+      "b": "N-0063",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0119",
+      "a": "N-0062",
+      "b": "N-0072",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0120",
+      "a": "N-0063",
+      "b": "N-0064",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0121",
+      "a": "N-0063",
+      "b": "N-0073",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0122",
+      "a": "N-0064",
+      "b": "N-0065",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0123",
+      "a": "N-0064",
+      "b": "N-0074",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0124",
+      "a": "N-0065",
+      "b": "N-0066",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0125",
+      "a": "N-0065",
+      "b": "N-0075",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0126",
+      "a": "N-0066",
+      "b": "N-0067",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0127",
+      "a": "N-0066",
+      "b": "N-0076",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0128",
+      "a": "N-0067",
+      "b": "N-0068",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0129",
+      "a": "N-0067",
+      "b": "N-0077",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0130",
+      "a": "N-0068",
+      "b": "N-0069",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0131",
+      "a": "N-0068",
+      "b": "N-0078",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0132",
+      "a": "N-0069",
+      "b": "N-0079",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0133",
+      "a": "N-0070",
+      "b": "N-0071",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0134",
+      "a": "N-0070",
+      "b": "N-0080",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0135",
+      "a": "N-0071",
+      "b": "N-0072",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0136",
+      "a": "N-0071",
+      "b": "N-0081",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0137",
+      "a": "N-0072",
+      "b": "N-0073",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0138",
+      "a": "N-0072",
+      "b": "N-0082",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0139",
+      "a": "N-0073",
+      "b": "N-0074",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0140",
+      "a": "N-0073",
+      "b": "N-0083",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0141",
+      "a": "N-0074",
+      "b": "N-0075",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0142",
+      "a": "N-0074",
+      "b": "N-0084",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0143",
+      "a": "N-0075",
+      "b": "N-0076",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0144",
+      "a": "N-0075",
+      "b": "N-0085",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0145",
+      "a": "N-0076",
+      "b": "N-0077",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0146",
+      "a": "N-0076",
+      "b": "N-0086",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0147",
+      "a": "N-0077",
+      "b": "N-0078",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0148",
+      "a": "N-0077",
+      "b": "N-0087",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0149",
+      "a": "N-0078",
+      "b": "N-0079",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0150",
+      "a": "N-0078",
+      "b": "N-0088",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0151",
+      "a": "N-0079",
+      "b": "N-0089",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0152",
+      "a": "N-0080",
+      "b": "N-0081",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0153",
+      "a": "N-0080",
+      "b": "N-0090",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0154",
+      "a": "N-0081",
+      "b": "N-0082",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0155",
+      "a": "N-0081",
+      "b": "N-0091",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0156",
+      "a": "N-0082",
+      "b": "N-0083",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0157",
+      "a": "N-0082",
+      "b": "N-0092",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0158",
+      "a": "N-0083",
+      "b": "N-0084",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0159",
+      "a": "N-0083",
+      "b": "N-0093",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0160",
+      "a": "N-0084",
+      "b": "N-0085",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0161",
+      "a": "N-0084",
+      "b": "N-0094",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0162",
+      "a": "N-0085",
+      "b": "N-0086",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0163",
+      "a": "N-0085",
+      "b": "N-0095",
+      "distancia_m": 100,
+      "tipo": "avenida"
+    },
+    {
+      "id": "E-0164",
+      "a": "N-0086",
+      "b": "N-0087",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0165",
+      "a": "N-0086",
+      "b": "N-0096",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0166",
+      "a": "N-0087",
+      "b": "N-0088",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0167",
+      "a": "N-0087",
+      "b": "N-0097",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0168",
+      "a": "N-0088",
+      "b": "N-0089",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0169",
+      "a": "N-0088",
+      "b": "N-0098",
+      "distancia_m": 100,
+      "tipo": "calle"
+    },
+    {
+      "id": "E-0170",
+      "a": "N-0089",
+      "b": "N-0099",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0171",
+      "a": "N-0090",
+      "b": "N-0091",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0172",
+      "a": "N-0091",
+      "b": "N-0092",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0173",
+      "a": "N-0092",
+      "b": "N-0093",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0174",
+      "a": "N-0093",
+      "b": "N-0094",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0175",
+      "a": "N-0094",
+      "b": "N-0095",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0176",
+      "a": "N-0095",
+      "b": "N-0096",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0177",
+      "a": "N-0096",
+      "b": "N-0097",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0178",
+      "a": "N-0097",
+      "b": "N-0098",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    },
+    {
+      "id": "E-0179",
+      "a": "N-0098",
+      "b": "N-0099",
+      "distancia_m": 100,
+      "tipo": "callejon"
+    }
+  ],
+  "refugios": [
+    {
+      "id": "R-1",
+      "nodo": "N-0000",
+      "nombre": "Refugio noroeste",
+      "capacidad": 80
+    },
+    {
+      "id": "R-2",
+      "nodo": "N-0009",
+      "nombre": "Refugio noreste",
+      "capacidad": 70
+    },
+    {
+      "id": "R-3",
+      "nodo": "N-0090",
+      "nombre": "Refugio suroeste",
+      "capacidad": 60
+    },
+    {
+      "id": "R-4",
+      "nodo": "N-0099",
+      "nombre": "Refugio sureste",
+      "capacidad": 30
+    }
+  ]
+}

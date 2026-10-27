@@ -1,0 +1,36 @@
+%% Fuente en Mermaid del diagrama de arquitectura (la imagen es docs/arquitectura.svg).
+%% GitHub dibuja este mismo código si se pega en un bloque ```mermaid del README.
+flowchart LR
+  subgraph Internet["Internet · público"]
+    NAV[Navegador<br/>mapa en vivo · GET /estado]
+    JUR[Jurado o cliente<br/>POST /paso + x-api-key]
+  end
+
+  CF[Amazon CloudFront<br/>única URL pública · HTTPS]
+  NAV --> CF
+  JUR --> CF
+
+  subgraph Cuenta["Cuenta de AWS · us-east-1"]
+    S3[(S3 privado<br/>archivos del mapa · OAC)]
+    subgraph VPC["VPC · 2 subredes públicas · sin NAT"]
+      ALB[Load Balancer<br/>solo CloudFront + x-origen]
+      M[Motor ×2–6<br/>ECS Fargate ARM64]
+      SIM[Simulador ×1<br/>ECS Fargate ARM64]
+    end
+    DDB[(DynamoDB<br/>estado del turno)]
+    SM[Secrets Manager<br/>api-key · admin-key · x-origen]
+    CW[CloudWatch<br/>logs · LatenciaPaso · alarmas]
+    BUD[AWS Budgets<br/>USD 25/mes]
+  end
+
+  CF -->|/*| S3
+  CF -->|/paso /rutas /estado /admin/* + x-origen| ALB
+  ALB -->|/paso /rutas| M
+  ALB -->|/estado /admin/*| SIM
+  M -->|GetItem por turno| DDB
+  SIM -->|PutItem| DDB
+  SIM -.->|POST /paso por la URL pública| CF
+  SM -.->|llaves al arrancar| M
+  SM -.-> SIM
+  M -.-> CW
+  SIM -.->|PutMetricData| CW

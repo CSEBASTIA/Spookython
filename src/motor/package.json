@@ -1,0 +1,14 @@
+{
+  "name": "@manta/motor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --format=cjs --outfile=dist/index.cjs && node ../../scripts/copiar-mapa.mjs dist",
+    "start": "node dist/index.cjs",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1157.0",
+    "@aws-sdk/lib-dynamodb": "^3.1157.0"
+  }
+}

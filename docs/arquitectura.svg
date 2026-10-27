@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="titulo desc">
+  <title id="titulo">Escape de Manta Zombie: arquitectura en AWS</title>
+  <desc id="desc">El navegador y el jurado entran solo por CloudFront. CloudFront sirve el mapa desde S3 y manda la API al ALB con un encabezado secreto. El ALB reparte entre el motor y el simulador en ECS Fargate. El simulador escribe el estado del turno en DynamoDB y el motor lo lee. El simulador llama a POST /paso por la URL pública.</desc>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3B4A45"/>
+    </marker>
+    <marker id="flecha-azul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2457A6"/>
+    </marker>
+    <marker id="flecha-gris" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A9A93"/>
+    </marker>
+    <style>
+      .titulo { font-size: 14px; font-weight: 700; fill: #16211E; }
+      .texto { font-size: 12.5px; fill: #16211E; }
+      .chico { font-size: 11px; fill: #55645E; }
+      .mono { font-family: ui-monospace, Consolas, monospace; font-size: 10.5px; fill: #55645E; }
+      .zona { font-size: 12px; font-weight: 700; fill: #55645E; letter-spacing: .04em; }
+      .publico { fill: #FFF4ED; stroke: #C2410C; stroke-width: 1.6; }
+      .privado { fill: #F4F7F5; stroke: #3B4A45; stroke-width: 1.2; }
+      .nota { fill: #FFFFFF; stroke: #B9C5BF; stroke-width: 1; }
+      .linea { fill: none; stroke: #3B4A45; stroke-width: 1.5; }
+      .linea-azul { fill: none; stroke: #2457A6; stroke-width: 1.6; stroke-dasharray: 7 5; }
+      .linea-gris { fill: none; stroke: #8A9A93; stroke-width: 1.4; stroke-dasharray: 2 4; }
+      .azul { font-size: 11px; fill: #2457A6; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="630" fill="#FFFFFF"/>
+
+  <!-- Título -->
+  <text x="20" y="42" font-size="19" font-weight="800" fill="#16211E">Escape de Manta Zombie · arquitectura en AWS</text>
+  <text x="20" y="66" class="chico">Turnos de 2 s: el simulador escribe el estado del turno, el motor lo lee y responde POST /paso.</text>
+  <text x="20" y="84" class="chico">Región us-east-1 · todo se crea con AWS CDK (infra/).</text>
+
+  <!-- Internet -->
+  <rect x="20" y="150" width="210" height="220" rx="10" fill="none" stroke="#C2410C" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="35" y="171" class="zona">INTERNET · PÚBLICO</text>
+  <rect x="35" y="182" width="180" height="62" rx="8" class="publico"/>
+  <text x="125" y="208" text-anchor="middle" class="titulo">Navegador</text>
+  <text x="125" y="228" text-anchor="middle" class="chico">mapa en vivo · GET /estado</text>
+  <rect x="35" y="282" width="180" height="62" rx="8" class="publico"/>
+  <text x="125" y="308" text-anchor="middle" class="titulo">Jurado o cliente</text>
+  <text x="125" y="328" text-anchor="middle" class="chico">POST /paso + x-api-key</text>
+
+  <!-- CloudFront -->
+  <rect x="290" y="180" width="190" height="166" rx="10" class="publico"/>
+  <text x="385" y="214" text-anchor="middle" class="titulo">Amazon CloudFront</text>
+  <text x="385" y="236" text-anchor="middle" class="texto">única URL pública</text>
+  <text x="385" y="254" text-anchor="middle" class="chico">HTTPS sin dominio propio</text>
+  <text x="385" y="296" text-anchor="middle" class="mono">/*  → S3</text>
+  <text x="385" y="313" text-anchor="middle" class="mono">/paso /rutas → ALB</text>
+  <text x="385" y="330" text-anchor="middle" class="mono">/estado /admin/* → ALB</text>
+
+  <path d="M215,213 H288" class="linea" marker-end="url(#flecha)"/>
+  <path d="M215,313 H288" class="linea" marker-end="url(#flecha)"/>
+
+  <!-- Cuenta AWS -->
+  <rect x="520" y="20" width="665" height="590" rx="12" fill="none" stroke="#8A9A93" stroke-width="1.4"/>
+  <text x="540" y="45" class="zona">CUENTA DE AWS · us-east-1 · PRIVADO SALVO CLOUDFRONT</text>
+
+  <!-- S3 -->
+  <rect x="550" y="70" width="210" height="70" rx="8" class="privado"/>
+  <text x="655" y="98" text-anchor="middle" class="titulo">Amazon S3 (privado)</text>
+  <text x="655" y="119" text-anchor="middle" class="chico">mapa · solo CloudFront (OAC)</text>
+  <path d="M440,180 V105 H548" class="linea" marker-end="url(#flecha)"/>
+
+  <!-- VPC -->
+  <rect x="550" y="160" width="420" height="280" rx="10" fill="none" stroke="#8A9A93" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="565" y="182" class="zona">VPC · 2 SUBREDES PÚBLICAS · SIN NAT</text>
+
+  <!-- ALB -->
+  <rect x="570" y="222" width="170" height="80" rx="8" class="privado"/>
+  <text x="655" y="250" text-anchor="middle" class="titulo">Load Balancer (ALB)</text>
+  <text x="655" y="270" text-anchor="middle" class="chico">solo IPs de CloudFront</text>
+  <text x="655" y="287" text-anchor="middle" class="chico">y encabezado x-origen</text>
+  <path d="M480,262 H568" class="linea" marker-end="url(#flecha)"/>
+
+  <!-- Motor y simulador -->
+  <rect x="790" y="190" width="160" height="80" rx="8" class="privado"/>
+  <text x="870" y="218" text-anchor="middle" class="titulo">Motor ×2–6</text>
+  <text x="870" y="238" text-anchor="middle" class="chico">ECS Fargate · ARM64</text>
+  <text x="870" y="255" text-anchor="middle" class="mono">POST /paso · /rutas</text>
+  <rect x="790" y="330" width="160" height="80" rx="8" class="privado"/>
+  <text x="870" y="358" text-anchor="middle" class="titulo">Simulador ×1</text>
+  <text x="870" y="378" text-anchor="middle" class="chico">ECS Fargate · ARM64</text>
+  <text x="870" y="395" text-anchor="middle" class="mono">GET /estado · /admin/*</text>
+  <path d="M740,245 H765 V230 H788" class="linea" marker-end="url(#flecha)"/>
+  <path d="M740,280 H765 V370 H788" class="linea" marker-end="url(#flecha)"/>
+
+  <!-- Servicios administrados -->
+  <rect x="1005" y="70" width="160" height="80" rx="8" class="privado"/>
+  <text x="1085" y="98" text-anchor="middle" class="titulo">Secrets Manager</text>
+  <text x="1085" y="118" text-anchor="middle" class="chico">api-key · admin-key</text>
+  <text x="1085" y="135" text-anchor="middle" class="chico">secreto x-origen</text>
+  <path d="M1003,110 H870 V188" class="linea-gris" marker-end="url(#flecha-gris)"/>
+  <text x="937" y="102" text-anchor="middle" class="chico">llaves al arrancar</text>
+
+  <rect x="1005" y="260" width="160" height="80" rx="8" class="privado"/>
+  <text x="1085" y="288" text-anchor="middle" class="titulo">DynamoDB</text>
+  <text x="1085" y="308" text-anchor="middle" class="chico">motor: GetItem por turno</text>
+  <text x="1085" y="325" text-anchor="middle" class="chico">simulador: PutItem</text>
+  <path d="M950,245 H978 V290 H1003" class="linea" marker-end="url(#flecha)"/>
+  <path d="M950,355 H978 V310 H1003" class="linea" marker-end="url(#flecha)"/>
+
+  <rect x="1005" y="380" width="160" height="80" rx="8" class="privado"/>
+  <text x="1085" y="408" text-anchor="middle" class="titulo">CloudWatch</text>
+  <text x="1085" y="428" text-anchor="middle" class="chico">logs · LatenciaPaso</text>
+  <text x="1085" y="445" text-anchor="middle" class="chico">alarmas → correo (SNS)</text>
+  <path d="M950,398 H1003" class="linea-gris" marker-end="url(#flecha-gris)"/>
+
+  <!-- El simulador llama al motor por la URL pública -->
+  <path d="M870,410 V485 H385 V348" class="linea-azul" marker-end="url(#flecha-azul)"/>
+  <text x="628" y="478" text-anchor="middle" class="azul">POST /paso por cada sobreviviente, por la URL pública (así se mide la latencia)</text>
+
+  <!-- Presupuesto e IAM -->
+  <rect x="550" y="515" width="200" height="74" rx="8" class="privado"/>
+  <text x="650" y="544" text-anchor="middle" class="titulo">AWS Budgets</text>
+  <text x="650" y="565" text-anchor="middle" class="chico">USD 25/mes · avisos 50, 80 y 100 %</text>
+  <rect x="775" y="515" width="390" height="74" rx="8" class="nota"/>
+  <text x="790" y="540" class="titulo">IAM mínimo</text>
+  <text x="790" y="559" class="chico">motor: dynamodb:GetItem sobre la tabla</text>
+  <text x="790" y="576" class="chico">simulador: GetItem, PutItem, PutMetricData (MantaZombie)</text>
+
+  <!-- Leyenda -->
+  <text x="20" y="420" class="zona">LEYENDA</text>
+  <rect x="20" y="434" width="26" height="16" rx="3" class="publico"/>
+  <text x="56" y="446" class="chico">Público: se llega desde internet</text>
+  <rect x="20" y="462" width="26" height="16" rx="3" class="privado"/>
+  <text x="56" y="474" class="chico">Privado: sin entrada desde internet</text>
+  <path d="M20,498 H46" class="linea" marker-end="url(#flecha)"/>
+  <text x="56" y="502" class="chico">Pedido HTTP o acceso a datos</text>
+  <path d="M20,526 H46" class="linea-azul" marker-end="url(#flecha-azul)"/>
+  <text x="56" y="530" class="chico">Simulador llamando al motor</text>
+  <path d="M20,554 H46" class="linea-gris" marker-end="url(#flecha-gris)"/>
+  <text x="56" y="558" class="chico">Llaves, logs y métricas</text>
+</svg>
